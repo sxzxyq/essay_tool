@@ -1,0 +1,9 @@
+处理后的文献名称列表：
+==================================================
+
+[1].Embodiedintelligence in manufacturing-leveraging large language.pdf
+[2].A Survey on Integration of Large Language Models with Intelligent Robots.pdf
+[3].Integration of Large Language Models within Cognitive Architectures for Autonomous Robots.pdf
+
+==================================================
+总计处理文件数：3

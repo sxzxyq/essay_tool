@@ -41,8 +41,16 @@ def rename_literature_files(directory_path, output_filename="processed_literatur
 
         try:
             with open(output_filename, 'w', encoding='utf-8') as f:
+                # 写入标题
+                f.write("处理后的文献名称列表：\n")
+                f.write("=" * 50 + "\n\n")
+                # 写入文件名，每个都单独成行
                 for name in sorted_processed_names:
-                    f.write(name + '\\n')
+                    f.write(f"{name}\n")
+                    # f.write(name + '\n')
+                # 写入统计信息
+                f.write("\n" + "=" * 50 + "\n")
+                f.write(f"总计处理文件数：{len(sorted_processed_names)}\n")
             print(f"所有处理后的文件名已保存到 '{output_filename}' 文件中，并已按序号排序。")
         except IOError as e:
             print(f"写入文件 '{output_filename}' 时发生错误：{e}")
@@ -53,6 +61,5 @@ def rename_literature_files(directory_path, output_filename="processed_literatur
 
 if __name__ == "__main__":
     # 获取用户输入的目录路径
-    # target_directory = input("请输入要处理的文献目录路径：")
-    target_directory = r"C:\Users\23166\Desktop\调研\原文献" # 直接指定目录路径
+    target_directory = input("请输入要处理的文献目录路径：")
     rename_literature_files(target_directory)

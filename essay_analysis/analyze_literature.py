@@ -127,7 +127,7 @@ def analyze_literature_in_directory(directory_path, api_key, output_filename="al
 
 if __name__ == "__main__":
     
-    literature_directory = r"C:\Users\23166\Desktop\调研\原文献"
+    literature_directory = input("请输入要处理的文献目录路径：")
     
     # 使用配置文件中的 API 密钥，可以指定输出文件名，这里使用默认值
     analyze_literature_in_directory(literature_directory, config.DEEPSEEK_API_KEY)
