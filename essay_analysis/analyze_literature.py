@@ -44,8 +44,8 @@ def call_deepseek_api(text_content, api_key=None, model=None):
     
     # 您可以根据需要调整这里的 prompt，以指导 DeepSeek API 进行特定类型的解析
     messages = [
-        {"role": "system", "content": "你是一个专业的文献分析助手，请对提供的文献内容进行总结和关键信息提取。"},
-        {"role": "user", "content": f"请分析以下文献内容，并使用以下模版总结，总结内容内部不要有多余的空行：XXX单位的XXX等人开展了XXX工作研究，面向XXX的需求，针对XXX的特点，采用了XXX方法，突破了XXX难点，实现了XXX的效果。其中，重点开展了XXX，包括XXX……（不少于350字）\\n\\n{text_content[:4000]}"} # 限制文本长度以避免API请求过大
+        {"role": "system", "content": config.SYSTEM_PROMPT},
+        {"role": "user", "content": config.USER_PROMPT_TEMPLATE.format(text_content=text_content)}
     ]
 
     payload = {
